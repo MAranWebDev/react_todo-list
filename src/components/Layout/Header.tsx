@@ -4,7 +4,7 @@ const Header = () => (
 	<header>
 		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div className="container">
-				<span className="navbar-brand">Todo App</span>
+				<span className="navbar-brand">Todo List App</span>
 				<button
 					className="navbar-toggler"
 					type="button"
