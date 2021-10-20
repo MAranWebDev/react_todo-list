@@ -2,8 +2,6 @@ import "./styles/global.scss";
 import "bootstrap/dist/js/bootstrap.min";
 import Routes from "./components/Routes";
 
-function App() {
-	return <Routes />;
-}
+const App = () => <Routes />;
 
 export default App;
