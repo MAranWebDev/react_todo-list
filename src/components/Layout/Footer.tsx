@@ -8,7 +8,7 @@ const Footer = () => (
 					<NavLinks />
 				</div>
 			</nav>
-			<p>Footer</p>
+			<p>&copy; MAranWebDev INC.</p>
 		</div>
 	</footer>
 );

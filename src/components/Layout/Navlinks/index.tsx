@@ -3,7 +3,7 @@ import ActiveLink from "./ActiveLink";
 const NavLinks = () => (
 	<>
 		<ActiveLink to="/" name="Home" />
-		<ActiveLink to="/todo-list" name="Todo Client" />
+		<ActiveLink to="/todo-client" name="Todo Client" />
 	</>
 );
 
