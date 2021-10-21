@@ -32,7 +32,6 @@ const Todos = () => {
 				<div className="col-auto">
 					<input
 						type="text"
-						autoFocus
 						className="form-control"
 						value={todo}
 						onChange={(e) => setTodo(e.target.value)}
