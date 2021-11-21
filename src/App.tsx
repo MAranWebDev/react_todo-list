@@ -1,7 +1,7 @@
 import "./styles/global.scss";
 import "bootstrap/dist/js/bootstrap.min";
-import Routes from "./components/Routes";
+import Router from "./components/Router";
 
-const App = () => <Routes />;
+const App = () => <Router />;
 
 export default App;

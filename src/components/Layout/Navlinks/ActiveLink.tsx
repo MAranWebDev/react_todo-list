@@ -6,7 +6,7 @@ type Props = {
 };
 
 const ActiveLink = ({ to, name }: Props) => (
-	<NavLink to={to} className="nav-link" activeClassName="active" exact>
+	<NavLink to={to} className="nav-link">
 		{name}
 	</NavLink>
 );
