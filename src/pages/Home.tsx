@@ -4,8 +4,10 @@ import { Todos } from "../components/Todos/Todos";
 const Home = () => {
   return (
     <Body title="Home">
-      <h1 className="mb-3">Todo Client</h1>
-      <Todos />
+      <main className="container my-5">
+        <h1 className="mb-3">Todo Client</h1>
+        <Todos />
+      </main>
     </Body>
   );
 };
