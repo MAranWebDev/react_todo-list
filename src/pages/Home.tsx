@@ -1,10 +1,11 @@
 import { Body } from "../components/Layout/Body";
+import { Todos } from "../components/Todos/Todos";
 
 const Home = () => {
   return (
     <Body title="Home">
-      <h1 className="mb-5">Todo List App</h1>
-      <p>Web app with local storage</p>
+      <h1 className="mb-3">Todo Client</h1>
+      <Todos />
     </Body>
   );
 };

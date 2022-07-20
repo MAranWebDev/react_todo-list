@@ -1,7 +1,5 @@
-import type { FormEvent } from "react";
-import { useContext, useState } from "react";
-import { TodosContext } from "./TodosContext";
-import { TodosProvider } from "./TodosContext";
+import { type FormEvent, useState, useContext } from "react";
+import { TodosProvider, TodosContext } from "./TodosContext";
 import { TodosList } from "./TodosList";
 
 const Todos = () => {

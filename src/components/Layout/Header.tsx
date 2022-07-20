@@ -10,13 +10,13 @@ const Header = () => {
     <header>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
-          <span className="navbar-brand">Todo List App</span>
+          <span className="navbar-brand">Todo App</span>
           <div className="navbar-nav ms-auto">
             <NavLink to="/" className={isActive}>
               Home
             </NavLink>
-            <NavLink to="/todo-client" className={isActive}>
-              Todo Client
+            <NavLink to="/about" className={isActive}>
+              About
             </NavLink>
           </div>
         </div>

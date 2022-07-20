@@ -1,10 +1,20 @@
 import {
   type PropsWithChildren,
-  createContext,
   useState,
   useEffect,
+  createContext,
 } from "react";
-import type { ContextTypes, TodoTypes } from "./types";
+
+type TodoType = { id: string; name: string; completed: boolean };
+
+type ContextType = {
+  todos: TodoType[];
+  setTodos: (value: TodoType[]) => void;
+  editId: string;
+  setEditId: (value: string) => void;
+  edit: string;
+  setEdit: (value: string) => void;
+};
 
 const defaultContextValues = {
   todos: [],
@@ -15,10 +25,10 @@ const defaultContextValues = {
   setEdit: () => {},
 };
 
-const TodosContext = createContext<ContextTypes>(defaultContextValues);
+const TodosContext = createContext<ContextType>(defaultContextValues);
 
 const TodosProvider = ({ children }: PropsWithChildren) => {
-  const [todos, setTodos] = useState<TodoTypes[]>([]);
+  const [todos, setTodos] = useState<TodoType[]>([]);
   const [editId, setEditId] = useState("");
   const [edit, setEdit] = useState("");
 
@@ -47,4 +57,4 @@ const TodosProvider = ({ children }: PropsWithChildren) => {
   );
 };
 
-export { TodosContext, TodosProvider };
+export { type TodoType, TodosContext, TodosProvider };

@@ -1,8 +1,7 @@
-import type { TodoTypes } from "./types";
 import { useContext } from "react";
-import { TodosContext } from "./TodosContext";
+import { type TodoType, TodosContext } from "./TodosContext";
 
-const Todo = ({ id, name, completed }: TodoTypes) => {
+const Todo = ({ id, name, completed }: TodoType) => {
   const { setEditId, setEdit, setTodos, todos } = useContext(TodosContext);
 
   const handleCheck = () => {

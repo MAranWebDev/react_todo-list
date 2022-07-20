@@ -1,6 +1,7 @@
-import type { IdType } from "./types";
 import { useContext } from "react";
 import { TodosContext } from "./TodosContext";
+
+type IdType = { id: string };
 
 const EditTodo = ({ id }: IdType) => {
   const { todos, edit, setTodos, setEditId, setEdit } =
