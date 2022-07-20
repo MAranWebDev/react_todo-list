@@ -25,9 +25,9 @@ const defaultContextValues = {
   setEdit: () => {},
 };
 
-const TodosContext = createContext<ContextType>(defaultContextValues);
+const TodoContext = createContext<ContextType>(defaultContextValues);
 
-const TodosProvider = ({ children }: PropsWithChildren) => {
+const TodoProvider = ({ children }: PropsWithChildren) => {
   const [todos, setTodos] = useState<TodoType[]>([]);
   const [editId, setEditId] = useState("");
   const [edit, setEdit] = useState("");
@@ -42,7 +42,7 @@ const TodosProvider = ({ children }: PropsWithChildren) => {
   }, [todos]);
 
   return (
-    <TodosContext.Provider
+    <TodoContext.Provider
       value={{
         todos,
         setTodos,
@@ -53,8 +53,8 @@ const TodosProvider = ({ children }: PropsWithChildren) => {
       }}
     >
       {children}
-    </TodosContext.Provider>
+    </TodoContext.Provider>
   );
 };
 
-export { type TodoType, TodosContext, TodosProvider };
+export { type TodoType, TodoContext, TodoProvider };

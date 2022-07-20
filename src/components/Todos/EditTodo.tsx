@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { TodosContext } from "./TodosContext";
+import { TodoContext } from "../../context/TodoContext";
 
 type IdType = { id: string };
 
 const EditTodo = ({ id }: IdType) => {
-  const { todos, edit, setTodos, setEditId, setEdit } =
-    useContext(TodosContext);
+  const { todos, edit, setTodos, setEditId, setEdit } = useContext(TodoContext);
 
   const updateTodo = () => {
     const newTodos = [...todos].map((todo) => {

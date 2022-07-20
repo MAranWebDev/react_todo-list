@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { type TodoType, TodosContext } from "./TodosContext";
+import { type TodoType, TodoContext } from "../../context/TodoContext";
 
-const Todo = ({ id, name, completed }: TodoType) => {
-  const { setEditId, setEdit, setTodos, todos } = useContext(TodosContext);
+const ShowTodo = ({ id, name, completed }: TodoType) => {
+  const { setEditId, setEdit, setTodos, todos } = useContext(TodoContext);
 
   const handleCheck = () => {
     const newTodos = [...todos].map((todo) => {
@@ -50,4 +50,4 @@ const Todo = ({ id, name, completed }: TodoType) => {
   );
 };
 
-export { Todo };
+export { ShowTodo };
