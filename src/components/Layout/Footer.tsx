@@ -1,16 +1,11 @@
-import NavLinks from "./NavLinks";
+const Footer = () => {
+  return (
+    <footer className="mt-auto bg-dark text-center text-light">
+      <section className="container p-3">
+        <p>&copy; MAranWebDev INC.</p>
+      </section>
+    </footer>
+  );
+};
 
-const Footer = () => (
-	<footer className="mt-auto bg-dark text-light">
-		<div className="container text-center">
-			<nav className="navbar navbar-expand-lg navbar-dark">
-				<div className="navbar-nav mx-auto">
-					<NavLinks />
-				</div>
-			</nav>
-			<p>&copy; MAranWebDev INC.</p>
-		</div>
-	</footer>
-);
-
-export default Footer;
+export { Footer };

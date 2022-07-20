@@ -1,29 +1,28 @@
-import NavLinks from "./NavLinks";
+import { NavLink } from "react-router-dom";
 
-const Header = () => (
-	<header>
-		<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-			<div className="container">
-				<span className="navbar-brand">Todo List App</span>
-				<button
-					className="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarNavAltMarkup"
-					aria-controls="navbarNavAltMarkup"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span className="navbar-toggler-icon"></span>
-				</button>
-				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div className="navbar-nav ms-auto">
-						<NavLinks />
-					</div>
-				</div>
-			</div>
-		</nav>
-	</header>
-);
+type IsActiveType = { isActive: boolean };
 
-export default Header;
+const isActive = ({ isActive }: IsActiveType) =>
+  isActive ? "nav-link disabled" : "nav-link";
+
+const Header = () => {
+  return (
+    <header>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <div className="container">
+          <span className="navbar-brand">Todo List App</span>
+          <div className="navbar-nav ms-auto">
+            <NavLink to="/" className={isActive}>
+              Home
+            </NavLink>
+            <NavLink to="/todo-client" className={isActive}>
+              Todo Client
+            </NavLink>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+};
+
+export { Header };
