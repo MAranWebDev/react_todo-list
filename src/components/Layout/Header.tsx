@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 type IsActiveType = { isActive: boolean };
 
 const isActive = ({ isActive }: IsActiveType) =>
-  isActive ? "nav-link disabled" : "nav-link";
+  isActive ? "nav-link active disabled" : "nav-link";
 
 const Header = () => {
   return (

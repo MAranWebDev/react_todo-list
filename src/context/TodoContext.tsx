@@ -1,60 +1,22 @@
-import {
-  type PropsWithChildren,
-  useState,
-  useEffect,
-  createContext,
-} from "react";
+import { type PropsWithChildren, createContext, useState } from "react";
+import { type UseTodoType, useTodo } from "../hooks/useTodo";
 
-type TodoType = { id: string; name: string; completed: boolean };
-
-type ContextType = {
-  todos: TodoType[];
-  setTodos: (value: TodoType[]) => void;
-  editId: string;
-  setEditId: (value: string) => void;
-  edit: string;
-  setEdit: (value: string) => void;
+type TodoContextType = UseTodoType & {
+  editId: number;
+  setEditId: (id: number) => void;
 };
 
-const defaultContextValues = {
-  todos: [],
-  setTodos: () => {},
-  editId: "",
-  setEditId: () => {},
-  edit: "",
-  setEdit: () => {},
-};
-
-const TodoContext = createContext<ContextType>(defaultContextValues);
+const TodoContext = createContext<TodoContextType>(undefined!);
 
 const TodoProvider = ({ children }: PropsWithChildren) => {
-  const [todos, setTodos] = useState<TodoType[]>([]);
-  const [editId, setEditId] = useState("");
-  const [edit, setEdit] = useState("");
-
-  useEffect(() => {
-    const temp = localStorage.getItem("todos");
-    temp && setTodos(JSON.parse(temp));
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify([...todos]));
-  }, [todos]);
+  const hook = useTodo();
+  const [editId, setEditId] = useState(0);
 
   return (
-    <TodoContext.Provider
-      value={{
-        todos,
-        setTodos,
-        editId,
-        setEditId,
-        edit,
-        setEdit,
-      }}
-    >
+    <TodoContext.Provider value={{ ...hook, editId, setEditId }}>
       {children}
     </TodoContext.Provider>
   );
 };
 
-export { type TodoType, TodoContext, TodoProvider };
+export { TodoContext, TodoProvider };

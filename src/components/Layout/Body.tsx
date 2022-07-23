@@ -15,9 +15,10 @@ const Body = ({
       <Helmet>
         <title>{title}</title>
       </Helmet>
+
       <div className="min-vh-100 d-flex flex-column">
         {!blank ? <Header /> : null}
-        {children}
+        {!blank ? <main className="container my-5">{children}</main> : children}
         {!blank ? <Footer /> : null}
       </div>
     </HelmetProvider>
