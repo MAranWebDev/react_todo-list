@@ -1,10 +1,12 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 
 type UseTodoType = {
   todos: TodoType[];
   createTodo: (todo: string) => void;
   deleteTodo: (id: number) => void;
   updateTodo: (payload: TodoType) => void;
+  editId: number;
+  setEditId: (id: number) => void;
 };
 
 type ReducerActionType =
@@ -41,6 +43,7 @@ const todoReducer = (state: TodoType[], action: ReducerActionType) => {
 
 const useTodo = () => {
   const [todos, dispatch] = useReducer(todoReducer, []);
+  const [editId, setEditId] = useState(0);
 
   const createTodo = (todo: string) =>
     dispatch({ type: ACTION.CREATE, payload: todo });
@@ -51,7 +54,7 @@ const useTodo = () => {
   const updateTodo = (payload: TodoType) =>
     dispatch({ type: ACTION.UPDATE, payload });
 
-  return { todos, createTodo, deleteTodo, updateTodo };
+  return { todos, createTodo, deleteTodo, updateTodo, editId, setEditId };
 };
 
 export { type UseTodoType, useTodo };

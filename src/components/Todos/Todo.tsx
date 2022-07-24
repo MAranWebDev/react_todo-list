@@ -11,11 +11,15 @@ const Todo = ({ id, todo, completed }: TodoType) => {
     ? "btn-outline-light disabled"
     : "btn-outline-warning";
 
+  const handleEdit = () => {
+    setEditId(id);
+    setEditTodo(todo);
+  };
+
   const handleUpdate = () => {
     const newTodo = editTodo.trim();
-    setEditId(0);
     if (newTodo !== "") updateTodo({ id, todo: newTodo, completed });
-    setEditTodo(todo);
+    setEditId(0);
   };
 
   return (
@@ -33,10 +37,7 @@ const Todo = ({ id, todo, completed }: TodoType) => {
       </td>
       <td>
         {editId !== id ? (
-          <button
-            className={`btn ${classDisabled}`}
-            onClick={() => setEditId(id)}
-          >
+          <button className={`btn ${classDisabled}`} onClick={handleEdit}>
             Edit
           </button>
         ) : (
@@ -59,7 +60,7 @@ const Todo = ({ id, todo, completed }: TodoType) => {
           className="form-check-input"
           checked={completed}
           onChange={() => updateTodo({ id, todo, completed: !completed })}
-          disabled={editId === id ? true : false}
+          disabled={editId === id && true}
         />
       </td>
     </tr>

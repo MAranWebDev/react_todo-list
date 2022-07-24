@@ -4,7 +4,7 @@ const About = () => {
   return (
     <Body title="About">
       <h2 className="mb-3">About this project</h2>
-      <p>A vanilla todo list app with react, context and local storage</p>
+      <p>A vanilla todo app done in react and hooks</p>
     </Body>
   );
 };

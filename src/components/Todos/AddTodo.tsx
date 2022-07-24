@@ -7,8 +7,8 @@ const AddTodo = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    if (todo.trim() === "") return setTodo("");
-    createTodo(todo);
+    const newTodo = todo.trim();
+    if (newTodo !== "") createTodo(newTodo);
     setTodo("");
   };
 

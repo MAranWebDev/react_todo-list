@@ -1,9 +1,8 @@
-# React Todo List Project
+# React Todo App Project
 
 ### Description
 
-- Simple react todo list project
-- It runs completly on the browser by using local storage and context api to handle state
+Simple react todo app
 
 ### Live Demo
 
